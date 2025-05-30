@@ -1,3 +1,2 @@
 # saas-backend
 # teachingmanagementsystem
-# teachingmangementsystem
