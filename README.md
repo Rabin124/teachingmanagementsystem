@@ -1,4 +1,0 @@
-# teachingmangementsystem
-# teachingmangementsystem
-# teachingmanagementsystem
-# teachingmanagementsystem
