@@ -9,3 +9,14 @@ const sequelize = new Sequelize({
   port: Number(envConfig.databasePort) ,
   dialect: "mysql"
 });
+
+sequelize.authenticate()
+.then(()=>{
+  console.log("Authenticated, connected")
+})
+.catch((error)=>{
+  console.log(error)
+})
+
+
+export default sequelize;
