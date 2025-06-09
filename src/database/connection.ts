@@ -1,13 +1,14 @@
-import {Sequelize} from "sequelize"
+import {Sequelize} from "sequelize-typescript"
 import { envConfig } from "../config/config";
 
-const sequelize = new Sequelize({
+export const sequelize = new Sequelize({
   database: envConfig.databaseName,
   username: envConfig.databaseUser,
   password: envConfig.databasePassword,
   host: envConfig.databaseHost,
   port: Number(envConfig.databasePort) ,
-  dialect: "mysql"
+  dialect: "mysql",
+  models :[__dirname + "/models"]
 });
 
 sequelize.authenticate()
@@ -18,5 +19,10 @@ sequelize.authenticate()
   console.log(error)
 })
 
+
+sequelize.sync({alter: false})
+.then(() => {
+  console.log("migrated synchronized successfully.");
+})
 
 export default sequelize;
