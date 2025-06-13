@@ -1,6 +1,5 @@
 import {Sequelize} from "sequelize-typescript"
 import { envConfig } from "../config/config";
-
 export const sequelize = new Sequelize({
   database: envConfig.databaseName,
   username: envConfig.databaseUser,
@@ -20,9 +19,9 @@ sequelize.authenticate()
 })
 
 
-sequelize.sync({alter: false})
+sequelize.sync({alter:true,force:false}) // yeslai true ma rakda hunxa if model cupdate garanu vana db ma automatically update hunxa without delet data
 .then(() => {
   console.log("migrated synchronized successfully.");
 })
 
-export default sequelize;
+// export default sequelize;

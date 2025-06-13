@@ -12,31 +12,33 @@ class User extends Model{
     primaryKey: true,
     defaultValue: DataType.UUIDV4, // Automatically generate a UUID
     // autoIncrement: true,
-    // allowNull: false
+    allowNull: false
   })
+  declare id: string;
+  
   @Column({
     type: DataType.STRING,
-    // allowNull: false
+    allowNull: false
   })
   declare username: string;
 
   @Column({
     type: DataType.STRING,
-    // allowNull: false
+    allowNull: false
   })
   declare password: string;
 
   @Column({
     type: DataType.STRING,
     unique: true, // Ensure email is unique
-    // allowNull: false
+    allowNull: false
   })
   declare email: string;
 
   @Column({
     type: DataType.ENUM('teacher','institute','super-admin','student'),
     defaultValue: 'student',
-    // allowNull: false
+    allowNull: false
   })
   declare role:string
 }
