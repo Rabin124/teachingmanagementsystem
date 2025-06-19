@@ -19,7 +19,7 @@ sequelize.authenticate()
 })
 
 
-sequelize.sync({alter:true,force:false}) // yeslai true ma rakda hunxa if model cupdate garanu vana db ma automatically update hunxa without delet data
+sequelize.sync({alter:false,force:false}) // yeslai true ma rakda hunxa if model cupdate garanu vana db ma automatically update hunxa without delet data
 .then(() => {
   console.log("migrated synchronized successfully.");
 })
